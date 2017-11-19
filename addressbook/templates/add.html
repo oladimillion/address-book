@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block content %}
+{% load widget_tweaks %}
+<div class="flex">
+  <div class="header">
+    <a href="/"> <span class="glyphicon glyphicon-chevron-left"></span></a>
+    <h3 class="center-text">{{ title }}</h3>
+  </div>
+  <br />
+
+  <form method="post" novalidate>
+    {% csrf_token %}
+    
+    {% for hidden_field in form.hidden_fields %}
+      {{ hidden_field }}
+    {% endfor %}
+
+    {% if unique_error %}
+      <div class="center-text alert alert-danger" role="alert">
+          {{ unique_error }}
+      </div>
+    {% endif %}
+
+    {% if form.non_field_errors %}
+      <div class="center-text alert alert-danger" role="alert">
+        {% for error in form.non_field_errors %}
+          {{ error }}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% for field in form.visible_fields %}
+      <div class="form-group">
+        {{ field.label_tag }}
+
+        {% if form.is_bound %}
+          {% if field.errors %}
+            {% render_field field class="form-control has-error" %}
+            {% for error in field.errors %}
+              <div class="help-block has-error">
+                {{ error }}
+              </div>
+            {% endfor %}
+          {% else %}
+            {% render_field field class="form-control has-success" %}
+          {% endif %}
+        {% else %}
+          {% render_field field class="form-control" %}
+        {% endif %}
+
+        {% if field.help_text %}
+          <small class="form-text text-muted">{{ field.help_text }}</small>
+        {% endif %}
+      </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% endblock %}
+

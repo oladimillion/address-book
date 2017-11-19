@@ -1,0 +1,83 @@
+
+div.has-error {
+  color: #AA4240;
+}
+
+input.has-error {
+  border: 1px solid #AA4240;
+}
+
+input.has-success {
+  border: 1px solid #60BE6B;
+}
+
+.center-text{
+  text-align: center;
+}
+
+div.flex {
+  display: flex;
+  flex-flow: column;
+  margin-top: 20px;
+}
+
+div.flex div.header{
+  display: flex;
+  background: #234A89;
+  border-radius: 10px;
+  position: relative;
+}
+
+div.flex div.header span.glyphicon{
+  color: #fff;
+  font-size: 16px;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+div.flex div.header h3{
+  margin: auto;
+  padding: 9px;
+  width: 100%;
+  color: #fff;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+div.flex form{
+  margin: auto;
+  margin-top: 25px;
+  width: 40%;
+  min-width: 300px;
+}
+
+div.flex table.customize, div.flex div.card{
+  margin: auto;
+  margin-top: 20px;
+  width: 70%;
+  min-width: 500px;
+}
+
+div.flex div.card{
+  width: 40%;
+  display: flex;
+  flex-flow: column;
+  padding: 16px;
+  margin-top: 50px;
+  box-shadow: 5px 5px 10px #A4B5DC,
+            -2px -2px 5px #A4B5DC;
+}
+
+div.flex div.card div.buttons{
+  margin: auto;
+}
+
+div.flex div.card div.buttons a {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+}
