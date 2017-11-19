@@ -1,6 +1,8 @@
 # Address book
 
 > A simple Django app that keeps record of names and emails of people
+> User can easily add name and email to database
+> User can easily view list of saved names and emails
 
 ## Running Locally
 

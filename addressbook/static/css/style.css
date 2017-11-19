@@ -67,8 +67,8 @@ div.flex div.card{
   flex-flow: column;
   padding: 16px;
   margin-top: 50px;
-  box-shadow: 5px 5px 10px #A4B5DC,
-            -2px -2px 5px #A4B5DC;
+  border: 1px solid #A4B5DC;
+  box-shadow: 10px 10px 10px -5px #A4B5DC;
 }
 
 div.flex div.card div.buttons{

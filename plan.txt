@@ -1,0 +1,30 @@
+
+ASSUMPTIONS:
+- The app should have a welcome page
+
+- The welcome page should contain two buttons:
+  one should link to add page,
+  the other to list page
+
+- Add page should contain fields
+  where name and email can be entered,
+  and a add button to trigger add action
+  
+- list page should show this lists of
+  save names and emails
+
+- The app should disallow duplication of
+  names and emails
+
+
+BLOCKERS:
+- Poor internet connectivity
+
+- New to Django
+
+
+SOLUTION:
+- Night browsing
+
+- E-books and videos tutorials
+
