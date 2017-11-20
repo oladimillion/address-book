@@ -14,17 +14,13 @@ ASSUMPTIONS:
   save names and emails
 
 - The app should disallow duplication of
-  names and emails
+  names or emails
 
 
-BLOCKERS:
-- Poor internet connectivity
-
-- New to Django
+BLOCKER:
+- Little knowledge about Django
 
 
 SOLUTION:
-- Night browsing
-
-- E-books and videos tutorials
+- studied ebooks and blogs and videos tutorials
 
