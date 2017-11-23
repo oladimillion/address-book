@@ -6,12 +6,13 @@ from .models import Models
 
 
 def index(request, template_name='index.html'):
-    return render(request, template_name, {"title": "WELCOME"})
+    return render(request, template_name, {"title": "WELCOME", "backbtn": False})
 
 
 def add(request, template_name='add.html', form_class=AddressForm):
 
     title = 'ADD TO RECORD'
+    backbtn = True
 
     if request.method == 'POST':
         form = form_class(request.POST)
@@ -19,6 +20,7 @@ def add(request, template_name='add.html', form_class=AddressForm):
         context = {
             'form': form,
             'title': title,
+            "backbtn": backbtn,
         }
 
         if form.is_valid():
@@ -33,18 +35,21 @@ def add(request, template_name='add.html', form_class=AddressForm):
                     return render(request, template_name, {
                             'form': form,
                             'title': title,
+                            "backbtn": backbtn,
                             'unique_error': 'Name already taken'
                         })
                 elif str(err).find("email") != -1:
                     return render(request, template_name, {
                             'form': form,
                             'title': title,
+                            "backbtn": backbtn,
                             'unique_error': 'Email already taken'
                         })
                 else:
                     return render(request, template_name, {
                             'form': form,
                             'title': title,
+                            "backbtn": backbtn,
                             'unique_error': 'Error occurred'
                         })
 
@@ -56,6 +61,7 @@ def add(request, template_name='add.html', form_class=AddressForm):
         context = {
             'form': form,
             'title': title,
+            "backbtn": backbtn,
         }
     return render(request, template_name, context)
 
@@ -64,7 +70,8 @@ def list(request, template_name='list.html'):
     lists = Models.objects.all()
     context = {
         "title": "RECORD",
-        "lists": lists
+        "lists": lists,
+        "backbtn": True,
     }
     return render(request, template_name, context) 
 

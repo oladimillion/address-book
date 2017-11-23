@@ -2,10 +2,8 @@
 {% block content %}
 {% load widget_tweaks %}
 <div class="flex">
-  <div class="header">
-    <a href="/"> <span class="glyphicon glyphicon-chevron-left"></span></a>
-    <h3 class="center-text">{{ title }}</h3>
-  </div>
+
+  {% include "title-bar.html" %} 
   <br />
 
   <form method="post" novalidate>
